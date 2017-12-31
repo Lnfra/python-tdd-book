@@ -18,7 +18,7 @@ class NewVisitorTest(TestCase):
         rows = table.find_elements_by_tag_name('tr')
         self.assertTrue(
             any(row.text == row_text for row in rows),
-            'New to-do item {} did not appear in list'.format(row_text)
+            'New to-do item {} did not appear in list: {}'.format(row_text, [row.text for row in rows])
         )
 
     def test_can_start_a_list_and_retrieve_it_later(self):
